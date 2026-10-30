@@ -1,6 +1,70 @@
+
 @SchoolManagementAPI_HostAddress = http://localhost:5241
 
-GET {{SchoolManagementAPI_HostAddress}}/weatherforecast/
+### 1. Create Classroom
+POST {{SchoolManagementAPI_HostAddress}}/api/Classroom
+Content-Type: application/json
+
+{
+  "name": "Class PA403"
+}
+
+### 2. Get All Classrooms
+GET {{SchoolManagementAPI_HostAddress}}/api/Classroom
 Accept: application/json
 
-###
+### 3. Create Student
+POST {{SchoolManagementAPI_HostAddress}}/api/Student
+Content-Type: application/json
+
+{
+  "fullName": "Saleh Abbasov",
+  "age": 18,
+  "classroomId": 2
+}
+
+### 4. Get All Students
+GET {{SchoolManagementAPI_HostAddress}}/api/Student
+Accept: application/json
+
+### 5. Create First Course
+POST {{SchoolManagementAPI_HostAddress}}/api/Course
+Content-Type: application/json
+
+{
+  "name": "C# Programming"
+}
+
+### 6. Create Second Course
+POST {{SchoolManagementAPI_HostAddress}}/api/Course
+Content-Type: application/json
+
+{
+  "name": "Database"
+}
+
+### 7. Get All Courses
+GET {{SchoolManagementAPI_HostAddress}}/api/Course
+Accept: application/json
+
+### 8. Add Student to First Course
+POST {{SchoolManagementAPI_HostAddress}}/api/StudentCourse
+Content-Type: application/json
+
+{
+  "studentId": 1,
+  "courseId": 1
+}
+
+### 9. Add Student to Second Course
+POST {{SchoolManagementAPI_HostAddress}}/api/StudentCourse
+Content-Type: application/json
+
+{
+  "studentId": 1,
+  "courseId": 2
+}
+
+### 10. Get Student Courses
+GET {{SchoolManagementAPI_HostAddress}}/api/StudentCourse/1
+Accept: application/json
